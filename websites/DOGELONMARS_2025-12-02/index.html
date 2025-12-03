@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dogelon Mars ($DOGELONMARS) | To The Stars!</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'mars-red': '#E03E1A',
+                        'mars-orange': '#FF7F50',
+                        'space-black': '#0B0B15',
+                        'space-blue': '#1A1A2E',
+                        'neon-green': '#39FF14',
+                    },
+                    fontFamily: {
+                        'comic': ['Bangers', 'cursive'],
+                        'body': ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')",
+                        'mars-surface': "linear-gradient(to bottom, rgba(11,11,21,0.9), rgba(224,62,26,0.2)), url('https://images.unsplash.com/photo-1614728853975-66630c568571?q=80&w=2074&auto=format&fit=crop')"
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: '1', boxShadow: '0 0 20px #E03E1A' },
+                            '50%': { opacity: '.8', boxShadow: '0 0 40px #FF7F50' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0B0B15;
+            color: white;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .nav-item, .btn-text {
+            font-family: 'Bangers', cursive;
+            letter-spacing: 2px;
+        }
+        .text-shadow {
+            text-shadow: 4px 4px 0px #E03E1A;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px black;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0B15;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E03E1A;
+            border-radius: 5px;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-space-black/90 border-b border-mars-red/30 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-rocket text-mars-red text-3xl animate-bounce"></i>
+                    <span class="text-3xl text-white tracking-widest uppercase">DOGELON</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="nav-item hover:text-mars-orange text-white px-3 py-2 rounded-md text-xl transition">Mission</a>
+                        <a href="#tokenomics" class="nav-item hover:text-mars-orange text-white px-3 py-2 rounded-md text-xl transition">Tokenomics</a>
+                        <a href="#community" class="nav-item hover:text-mars-orange text-white px-3 py-2 rounded-md text-xl transition">Community</a>
+                        <a href="#" id="buy-btn-nav" class="bg-mars-red hover:bg-mars-orange text-white px-6 py-2 rounded-full font-bold text-xl transition transform hover:scale-105 shadow-[0_0_15px_rgba(224,62,26,0.6)]">
+                            BUY NOW
+                        </a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-mars-orange focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-hero-pattern bg-cover bg-center bg-fixed bg-no-repeat">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-space-black via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <div class="animate-float mb-6">
+                <img src="https://cryptologos.cc/logos/dogelon-mars-elon-logo.png" alt="Dogelon Logo" class="w-32 h-32 md:w-48 md:h-48 mx-auto drop-shadow-[0_0_30px_rgba(224,62,26,0.8)]">
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-extrabold text-white mb-4 text-shadow tracking-wider">
+                DOGELON MARS
+            </h1>
+            <p class="text-2xl md:text-4xl text-gray-200 font-comic mb-8 text-mars-orange">
+                THE INTERGALACTIC CURRENCY
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#" id="hero-telegram" class="group relative px-8 py-4 bg-blue-500 rounded-xl overflow-hidden font-bold text-xl shadow-lg transform transition hover:-translate-y-1">
+                    <span class="relative z-10 flex items-center gap-2"><i class="fa-brands fa-telegram"></i> JOIN TELEGRAM</span>
+                    <div class="absolute inset-0 h-full w-full bg-blue-400 scale-0 group-hover:scale-150 transition-all duration-500 rounded-full opacity-50"></div>
+                </a>
+                <a href="#" id="hero-chart" class="group relative px-8 py-4 bg-mars-red rounded-xl overflow-hidden font-bold text-xl shadow-lg transform transition hover:-translate-y-1">
+                    <span class="relative z-10 flex items-center gap-2"><i class="fa-solid fa-chart-line"></i> VIEW CHART</span>
+                    <div class="absolute inset-0 h-full w-full bg-mars-orange scale-0 group-hover:scale-150 transition-all duration-500 rounded-full opacity-50"></div>
+                </a>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-4 max-w-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 border-mars-red/50">
+                <span class="text-gray-400 font-bold uppercase tracking-widest text-sm">Contract Address (ETH):</span>
+                <code id="ca-display" class="font-mono text-neon-green text-sm md:text-base break-all">LOADING...</code>
+                <button onclick="copyCA()" class="text-white hover:text-mars-orange transition" title="Copy Address">
+                    <i class="fa-regular fa-copy text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-space-black relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-mars-red rounded-full filter blur-[100px] opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-600 rounded-full filter blur-[100px] opacity-20"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <div class="relative group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-mars-red to-purple-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                        <img src="https://images.unsplash.com/photo-1639803930605-658c422c7104?q=80&w=1632&auto=format&fit=crop" alt="Dogelon Art" class="relative rounded-lg shadow-2xl border-2 border-gray-800 w-full transform rotate-2 hover:rotate-0 transition duration-500">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-5xl text-mars-orange mb-6 text-shadow">I AM DOGELON.</h2>
+                    <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                        The year is <span class="text-mars-red font-bold">2420</span>. I have traveled back in time to re-colonize Mars and bring humanity to the stars. 
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+                        Unlike other meme coins, we aren't just going to the moon. We are going to Mars. Join the Dogelon army as we build the first intergalactic currency for the future of civilization.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-space-blue p-4 rounded-xl border border-gray-800 text-center">
+                            <i class="fa-solid fa-users text-3xl text-mars-red mb-2"></i>
+                            <h3 class="text-xl">Community</h3>
+                            <p class="text-sm text-gray-400">Strong & Diamond Handed</p>
+                        </div>
+                        <div class="bg-space-blue p-4 rounded-xl border border-gray-800 text-center">
+                            <i class="fa-solid fa-shield-halved text-3xl text-mars-red mb-2"></i>
+                            <h3 class="text-xl">Secure</h3>
+                            <p class="text-sm text-gray-400">Audited & Safe</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokenomics" class="py-20 bg-mars-surface bg-cover bg-fixed">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl text-white mb-16 text-shadow">TOKENOMICS</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="glass-panel p-8 rounded-2xl transform hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-mars-red rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_#E03E1A]">
+                        <i class="fa-solid fa-fire text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl mb-2">50% Gifted</h3>
+                    <p class="text-gray-300">Half of the supply was gifted to Vitalik Buterin, who donated it to charity.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl transform hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_#3B82F6]">
+                        <i class="fa-solid fa-lock text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl mb-2">Liquidity Locked</h3>
+                    <p class="text-gray-300">50% permanently locked in the Uniswap liquidity pool.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl transform hover:-translate-y-2 transition duration-300">
+                    <div class="w-16 h-16 bg-neon-green rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_#39FF14]">
+                        <i class="fa-brands fa-ethereum text-3xl text-black"></i>
+                    </div>
+                    <h3 class="text-3xl mb-2">ERC-20</h3>
+                    <p class="text-gray-300">Built on Ethereum. Safe, secure, and ready for intergalactic travel.</p>
+                </div>
+            </div>
+
+            <div class="mt-20">
+                <h3 class="text-4xl text-white mb-8">PARTNERS & EXCHANGES</h3>
+                <div class="flex flex-wrap justify-center gap-8 opacity-70 grayscale hover:grayscale-0 transition duration-500">
+                    <div class="bg-white/10 px-6 py-3 rounded-lg font-bold text-xl">UNISWAP</div>
+                    <div class="bg-white/10 px-6 py-3 rounded-lg font-bold text-xl">OKX</div>
+                    <div class="bg-white/10 px-6 py-3 rounded-lg font-bold text-xl">CRYPTO.COM</div>
+                    <div class="bg-white/10 px-6 py-3 rounded-lg font-bold text-xl">GEMINI</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="py-20 bg-space-black text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl text-mars-orange mb-8 text-shadow">JOIN THE MISSION</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                We are a community-driven project. Follow our socials to stay updated on the latest transmission from Mars.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="#" id="footer-x" class="flex items-center justify-center gap-4 bg-black border border-gray-700 hover:border-white px-8 py-4 rounded-xl text-xl font-bold transition duration-300 group">
+                    <i class="fa-brands fa-x-twitter text-3xl group-hover:text-mars-red transition"></i>
+                    <span>FOLLOW ON X</span>
+                </a>
+                <a href="#" id="footer-tg" class="flex items-center justify-center gap-4 bg-blue-600 hover:bg-blue-500 px-8 py-4 rounded-xl text-xl font-bold transition duration-300 shadow-[0_0_20px_rgba(37,99,235,0.5)]">
+                    <i class="fa-brands fa-telegram text-3xl"></i>
+                    <span>JOIN TELEGRAM</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-8 border-t border-gray-900">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <i class="fa-solid fa-rocket text-mars-red"></i>
+                <span class="text-xl font-comic tracking-widest text-white">DOGELON MARS</span>
+            </div>
+            <p class="text-gray-600 text-sm mb-4">
+                $DOGELONMARS is a meme coin with no intrinsic value or expectation of financial return. There is no formal team or roadmap. The coin is completely useless and for entertainment purposes only.
+            </p>
+            <p class="text-gray-700 text-xs">
+                &copy; 2025 Dogelon Mars. To The Stars.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // --- CONST CONFIG ---
+        const CONFIG = {
+            CA: '0x761D38e5ddf6ccf6Cf7c55759d5210750B5D60F3', // Real Dogelon CA
+            SOCIAL_X: 'https://twitter.com/DogelonMars',
+            TELEGRAM: 'https://t.me/DogelonMars',
+            CHART: 'https://www.dextools.io/app/en/ether/pair-explorer/0x761d38e5ddf6ccf6cf7c55759d5210750b5d60f3'
+        };
+
+        // Initialize Data
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set CA
+            document.getElementById('ca-display').innerText = CONFIG.CA;
+            
+            // Set Links
+            document.getElementById('hero-telegram').href = CONFIG.TELEGRAM;
+            document.getElementById('footer-tg').href = CONFIG.TELEGRAM;
+            document.getElementById('footer-x').href = CONFIG.SOCIAL_X;
+            document.getElementById('hero-chart').href = CONFIG.CHART;
+            document.getElementById('buy-btn-nav').href = CONFIG.CHART; // Directing buy to chart/dex for now
+        });
+
+        // Copy CA Function
+        function copyCA() {
+            navigator.clipboard.writeText(CONFIG.CA).then(() => {
+                const caDisplay = document.getElementById('ca-display');
+                const originalText = caDisplay.innerText;
+                caDisplay.innerText = "COPIED!";
+                caDisplay.classList.add('text-mars-orange');
+                
+                setTimeout(() => {
+                    caDisplay.innerText = CONFIG.CA;
+                    caDisplay.classList.remove('text-mars-orange');
+                }, 1500);
+            });
+        }
+    </script>
+</body>
+</html>

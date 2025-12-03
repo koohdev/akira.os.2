@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$WOJAK - The Chad Wojak of ETH. WAGMI.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Degen-Native Styling */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+        
+        .font-impact-like {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+
+        .text-neon-purple { color: #A900FF; }
+        .bg-neon-purple { background-color: #A900FF; }
+        .text-money-green { color: #00FF00; }
+
+        .cta-shadow {
+            box-shadow: 0 0 10px #A900FF, 0 0 20px #A900FF, 0 0 40px #A900FF;
+            transition: all 0.3s ease;
+        }
+
+        .cta-shadow:hover {
+            box-shadow: 0 0 15px #A900FF, 0 0 30px #A900FF, 0 0 60px #A900FF;
+            transform: scale(1.05);
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body class="bg-[#111111] text-white font-sans scroll-smooth">
+
+    <script>
+        const CONFIG = { 
+            CA: "CA_PLACEHOLDER", 
+            SOCIAL_X: "X_LINK_PLACEHOLDER", 
+            TELEGRAM: "TG_LINK_PLACEHOLDER" 
+        };
+        
+        // Link Construction Logic
+        const BUY_LINK = `https://app.uniswap.org/swap?outputCurrency=${CONFIG.CA}`;
+        const DS_LINK = `https://dexscreener.com/ethereum/${CONFIG.CA}`;
+        const DT_LINK = `https://www.dextools.io/app/en/ether/pair-explorer/${CONFIG.CA}`;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-link="buy"]').forEach(el => el.href = BUY_LINK);
+            document.querySelectorAll('[data-link="dexscreener"]').forEach(el => el.href = DS_LINK);
+            document.querySelectorAll('[data-link="dextools"]').forEach(el => el.href = DT_LINK);
+            document.querySelectorAll('[data-link="social-x"]').forEach(el => el.href = CONFIG.SOCIAL_X);
+            document.querySelectorAll('[data-link="telegram"]').forEach(el => el.href = CONFIG.TELEGRAM);
+
+            // Copy CA function
+            window.copyCA = () => {
+                navigator.clipboard.writeText(CONFIG.CA);
+                alert('Contract Address Copied! WAGMI!');
+            };
+        });
+    </script>
+
+    <nav class="sticky top-0 z-50 bg-[#111111]/90 backdrop-blur-sm p-4 border-b border-neon-purple/50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-impact-like text-3xl text-neon-purple tracking-widest">$WOJAK</a>
+            <div class="flex space-x-4">
+                <a href="#buy" class="text-sm font-bold hover:text-money-green transition duration-200">BUY NOW</a>
+                <a href="#roadmap" class="text-sm font-bold hover:text-money-green transition duration-200">ROADMAP</a>
+                <a data-link="telegram" target="_blank" class="text-sm font-bold hover:text-money-green transition duration-200">TELEGRAM</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative overflow-hidden pt-20 pb-24 lg:pt-32 lg:pb-40 text-center">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="absolute inset-0 opacity-10 blur-sm bg-[url('hype-gif-placeholder.jpg')] bg-cover bg-center"></div>
+
+        <div class="relative max-w-4xl mx-auto px-4">
+            <h1 class="font-impact-like text-7xl sm:text-9xl tracking-tighter uppercase mb-4 leading-none text-white">
+                THE ASCENSION OF <span class="text-neon-purple">$WOJAK</span>
+            </h1>
+            <p class="text-xl sm:text-2xl mb-8 font-extrabold tracking-wide text-money-green">
+                CRYING WOJAK IS DEAD. CHAD WOJAK IS HERE. <span class="text-white">DIAMOND HANDS ONLY.</span>
+            </p>
+
+            <a id="buy" data-link="buy" target="_blank" class="inline-block py-4 px-12 bg-neon-purple text-white font-impact-like text-2xl uppercase rounded-full cta-shadow transform hover:scale-[1.08] transition duration-300">
+                LFG. BUY THE DIP!
+            </a>
+
+            <div class="mt-8 max-w-sm mx-auto p-3 bg-white/10 rounded-xl border-2 border-neon-purple/50 cursor-pointer hover:bg-white/20 transition duration-300" onclick="copyCA()">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm sm:text-base font-mono truncate mr-3">CA_PLACEHOLDER</span>
+                    <span class="text-neon-purple font-bold text-sm flex-shrink-0">CLICK TO COPY</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 bg-black">
+        <div class="max-w-4xl mx-auto px-4 flex justify-center space-x-8">
+            <a data-link="social-x" target="_blank" class="opacity-80 hover:opacity-100 transition duration-300" title="X / Twitter">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" class="h-8 w-8 brightness-0 invert" alt="X Logo">
+            </a>
+            <a data-link="telegram" target="_blank" class="opacity-80 hover:opacity-100 transition duration-300" title="Telegram">
+                <svg class="h-8 w-8 text-white hover:text-money-green" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 8.441a.75.75 0 0 0-.712-.119l-19.1 7.27a.75.75 0 0 0 .167 1.487l5.58-1.579 12.336-7.85-8.47 5.761 11.237 4.26a.75.75 0 0 0 .973-.805L22 8.441Z"/></svg>
+            </a>
+            <a data-link="dexscreener" target="_blank" class="opacity-80 hover:opacity-100 transition duration-300" title="DexScreener Chart">
+                <img src="https://images.apifyusercontent.com/JAu0GoIJvy2QxryzlGcdF2aZFhJZlKZBI-xA585gl8A/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSElNQUNaaE9uN1lKNzFkVHUtYWN0b3ItMmZTU2ZtWnJhbVBCTzczT0staUJpaG5GM3BicC1kZXhwbmcucG5n.webp" class="h-8 w-8 brightness-0 invert" alt="DexScreener Logo">
+            </a>
+            <a data-link="dextools" target="_blank" class="opacity-80 hover:opacity-100 transition duration-300" title="Dextools Chart">
+                <img src="https://wp.logos-download.com/wp-content/uploads/2023/02/Dextools_Logo.svg?dl" class="h-8 w-8 brightness-0 invert" alt="Dextools Logo">
+            </a>
+            <a data-link="buy" target="_blank" class="opacity-80 hover:opacity-100 transition duration-300" title="Uniswap Buy Link">
+                <img src="https://png.pngtree.com/png-clipart/20230820/original/pngtree-uniswap-uni-token-symbol-cryptocurrency-logo-picture-image_8077633.png" class="h-8 w-8" alt="Uniswap Logo">
+            </a>
+        </div>
+    </section>
+
+    <div class="marquee-container bg-neon-purple/10 py-3 border-y border-neon-purple">
+        <div class="marquee-content font-impact-like text-3xl tracking-widest text-money-green uppercase">
+            &nbsp;✦ CHAD ENERGY ONLY ✦ ALPHA CALL ✦ DIAMOND HANDS ✦ WOJAK TO THE MOON ✦ 100X VIBES ✦ LFG &nbsp;
+            &nbsp;✦ CHAD ENERGY ONLY ✦ ALPHA CALL ✦ DIAMOND HANDS ✦ WOJAK TO THE MOON ✦ 100X VIBES ✦ LFG &nbsp;
+        </div>
+    </div>
+
+    <section id="buy-steps" class="py-20 max-w-5xl mx-auto px-4 text-center">
+        <h2 class="font-impact-like text-5xl mb-12 uppercase text-neon-purple">HOW TO BECOME A <span class="text-white">WOJAK CHAD</span></h2>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="p-6 bg-[#181818] rounded-xl border border-neon-purple/50 shadow-lg hover:shadow-neon-purple/50 transition duration-300">
+                <p class="text-4xl font-extrabold mb-3 text-money-green">1</p>
+                <h3 class="text-xl font-impact-like mb-2 uppercase text-white">GET ETH</h3>
+                <p class="text-sm text-gray-400">Acquire Ethereum from any major CEX and send it to your MetaMask/Trust Wallet.</p>
+            </div>
+            <div class="p-6 bg-[#181818] rounded-xl border border-neon-purple/50 shadow-lg hover:shadow-neon-purple/50 transition duration-300">
+                <p class="text-4xl font-extrabold mb-3 text-money-green">2</p>
+                <h3 class="text-xl font-impact-like mb-2 uppercase text-white">CONNECT</h3>
+                <p class="text-sm text-gray-400">Connect your wallet to the Uniswap widget via the 'BUY NOW' button.</p>
+            </div>
+            <div class="p-6 bg-[#181818] rounded-xl border-neon-purple/50 shadow-lg hover:shadow-neon-purple/50 transition duration-300">
+                <p class="text-4xl font-extrabold mb-3 text-money-green">3</p>
+                <h3 class="text-xl font-impact-like mb-2 uppercase text-white">SWAP FOR $WOJAK</h3>
+                <p class="text-sm text-gray-400">Set slippage to 5-7%, or less if volume is high. Swap your ETH for $WOJAK.</p>
+            </div>
+            <div class="p-6 bg-[#181818] rounded-xl border border-neon-purple/50 shadow-lg hover:shadow-neon-purple/50 transition duration-300">
+                <p class="text-4xl font-extrabold mb-3 text-money-green">4</p>
+                <h3 class="text-xl font-impact-like mb-2 uppercase text-white">WAGMI</h3>
+                <p class="text-sm text-gray-400">Hold on. Don't be a JEET. Enjoy the gains and spread the Chad Wojak gospel.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="py-20 bg-black/50">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="font-impact-like text-5xl mb-12 uppercase text-center text-white">THE ASCENSION <span class="text-neon-purple">ROADMAP</span></h2>
+
+            <div class="space-y-12 relative before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2 before:top-0 before:bottom-0 before:w-1 before:bg-neon-purple/30">
+                
+                <div class="flex flex-col md:flex-row justify-start items-center w-full">
+                    <div class="md:w-5/12 text-right p-4">
+                        <h3 class="text-2xl font-impact-like uppercase text-money-green">PHASE 1: THE PUMP</h3>
+                        <p class="text-sm text-gray-300">Stealth Launch, Contract Deployment, Dextools/DexScreener listings, Initial Marketing Raids, Community Building (1,000+ Chads), CA reveal to the world.</p>
+                    </div>
+                    <div class="w-2 h-24 md:w-2/12 relative flex items-center justify-center">
+                        <div class="w-6 h-6 bg-neon-purple rounded-full z-10 border-4 border-[#111111]"></div>
+                    </div>
+                    <div class="md:w-5/12 p-4"></div>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-end items-center w-full">
+                    <div class="md:w-5/12 p-4 hidden md:block"></div>
+                    <div class="w-2 h-24 md:w-2/12 relative flex items-center justify-center">
+                        <div class="w-6 h-6 bg-neon-purple rounded-full z-10 border-4 border-[#111111]"></div>
+                    </div>
+                    <div class="md:w-5/12 text-left p-4">
+                        <h3 class="text-2xl font-impact-like uppercase text-money-green">PHASE 2: CHAD VALIDATION</h3>
+                        <p class="text-sm text-gray-300">Trend on Dextools/DexScreener, 5,000+ Holders, Strategic Influencer Partnerships, CoinGecko/CoinMarketCap applications, Burn/Lock LP (Forever Chad).
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-start items-center w-full">
+                    <div class="md:w-5/12 text-right p-4">
+                        <h3 class="text-2xl font-impact-like uppercase text-money-green">PHASE 3: GLOBAL DOMINATION</h3>
+                        <p class="text-sm text-gray-300">CEX Listings (Tier 1/2), 10,000+ Holders, DAO/Community Staking Initiatives, $WOJAK Merch Drop (Chad Style), The Meme King Legacy Established.</p>
+                    </div>
+                    <div class="w-2 h-24 md:w-2/12 relative flex items-center justify-center">
+                        <div class="w-6 h-6 bg-neon-purple rounded-full z-10 border-4 border-[#111111]"></div>
+                    </div>
+                    <div class="md:w-5/12 p-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 max-w-7xl mx-auto px-4 text-center">
+        <h2 class="font-impact-like text-5xl mb-12 uppercase text-white"><span class="text-neon-purple">WOJAK</span> STICKERS & MEMES</h2>
+        <p class="mb-8 text-lg text-gray-400">Download the **Nano Banana** pack and shill like a true Chad.</p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+            <div class="p-4 bg-[#181818] rounded-xl hover:bg-neon-purple/20 transition duration-300"></div>
+            <div class="p-4 bg-[#181818] rounded-xl hover:bg-neon-purple/20 transition duration-300"></div>
+            <div class="p-4 bg-[#181818] rounded-xl hover:bg-neon-purple/20 transition duration-300"></div>
+            <div class="p-4 bg-[#181818] rounded-xl hover:bg-neon-purple/20 transition duration-300"></div>
+            <div class="p-4 bg-[#181818] rounded-xl hover:bg-neon-purple/20 transition duration-300"></div>
+        </div>
+
+    </section>
+
+    <footer class="bg-black border-t border-neon-purple/50 p-6 text-center">
+        <p class="text-sm text-gray-500 font-mono">
+            WOJAK is a meme coin with no intrinsic value or expectation of financial return. It is purely for entertainment, just like the memes.
+        </p>
+        <p class="text-lg font-impact-like mt-3 text-neon-purple">© $WOJAK - CHAD ASCENSION | 2025</p>
+    </footer>
+
+</body>
+</html>

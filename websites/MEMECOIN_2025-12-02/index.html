@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$MEMECOIN | THE RETROWAVE CHAD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* RETROWAVE FONT STYLES - Simulating a blocky, 80s display font */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Wallpoet&display=swap');
+        
+        .font-header {
+            font-family: 'Wallpoet', cursive; /* Blocky, stylized for headings */
+            text-shadow: 0 0 10px #FF00A6, 0 0 20px #00FFFF, 0 0 30px #8A2BE2;
+            -webkit-text-stroke: 1px rgba(138, 43, 226, 0.5); /* Subtle outline */
+        }
+        .font-body {
+            font-family: 'Roboto Mono', monospace; /* Futuristic/Clean for body */
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(255, 0, 166, 0.7), 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+        .bg-retrowave {
+            background-color: #0D002C; /* Midnight Purple */
+            background-image: radial-gradient(circle at center, #1a004b 1px, transparent 1px), linear-gradient(to right, #1a004b 1px, transparent 1px), linear-gradient(to bottom, #1a004b 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .social-icon {
+            filter: brightness(0) invert(1); /* Ensure logos are white on dark BG */
+        }
+    </style>
+</head>
+<body class="bg-retrowave text-white font-body min-h-screen">
+
+    <script>
+        const CONFIG = { 
+            CA: "CA_PLACEHOLDER", 
+            SOCIAL_X: "X_LINK_PLACEHOLDER", 
+            TELEGRAM: "TG_LINK_PLACEHOLDER" 
+        };
+        
+        // Dynamic Link Construction (PUMP.FUN & Socials)
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('buy-link').href = `https://pump.fun/coin/${CONFIG.CA}`;
+            document.getElementById('x-link').href = CONFIG.SOCIAL_X;
+            document.getElementById('tg-link').href = CONFIG.TELEGRAM;
+            
+            // PUMP.FUN uses a direct link, no separate chart link needed in the social section, 
+            // but we'll link to DexScreener (assuming SOL) for a full chart after launch.
+            document.getElementById('dex-link').href = `https://dexscreener.com/solana/${CONFIG.CA}`;
+            document.getElementById('dextools-link').href = `https://www.dextools.io/app/en/solana/pair-explorer/${CONFIG.CA}`;
+        });
+    </script>
+
+    <nav class="sticky top-0 z-50 p-4 border-b border-pink-700/50 bg-retrowave/90 backdrop-blur-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-header text-[#00FFFF] tracking-widest">MEMECOIN</h1>
+            <div class="flex space-x-6 text-lg font-bold">
+                <a href="#hero" class="hover:text-[#FF00A6] transition duration-200">HOME</a>
+                <a href="#buy" class="hover:text-[#FF00A6] transition duration-200">HOW TO BUY</a>
+                <a href="#roadmap" class="hover:text-[#FF00A6] transition duration-200">ROADMAP</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="hero" class="container mx-auto pt-20 pb-16 text-center">
+        <h2 class="text-7xl md:text-9xl font-header text-[#FF00A6] uppercase mb-4 tracking-tighter">
+            THE DIGITAL<br>DEGEN WAVE
+        </h2>
+        <p class="text-2xl md:text-3xl text-[#00FFFF] mb-10 tracking-widest">
+            **MEMECOIN** IS THE RETROWAVE PUMP ON $SOL. JEET PROOF. WAGMI.
+        </p>
+        <div class="relative inline-block">
+            <a id="buy-link" href="#" class="inline-block py-4 px-12 text-3xl font-bold bg-[#FF00A6] text-white uppercase rounded-lg transition duration-300 hover:bg-[#00FFFF] hover:text-[#0D002C] neon-glow">
+                JOIN THE PUMP.FIRM
+            </a>
+            <p class="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-lg text-yellow-400/90 animate-pulse mt-2">
+                Launch on **PUMP.FUN** - Locked Liquidity.
+            </p>
+        </div>
+        <div class="mt-20">
+            <p class="text-xl text-white/70">CONTRACT ADDRESS (CA)</p>
+            <code class="block text-2xl md:text-4xl text-[#00FFFF] mt-2 p-3 bg-[#1a004b] border border-[#8A2BE2] rounded-lg cursor-pointer select-all">
+                CA_PLACEHOLDER
+            </code>
+        </div>
+    </header>
+
+    <section class="container mx-auto py-10">
+        <div class="flex justify-center space-x-8">
+            <a id="x-link" href="#" target="_blank" class="w-16 h-16 p-2 rounded-full bg-white/10 hover:bg-[#FF00A6] transition duration-200 neon-glow flex items-center justify-center" aria-label="X / Twitter">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="X Logo" class="w-10 h-10 social-icon">
+            </a>
+            <a id="tg-link" href="#" target="_blank" class="w-16 h-16 p-2 rounded-full bg-white/10 hover:bg-[#00FFFF] transition duration-200 neon-glow flex items-center justify-center" aria-label="Telegram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-10 h-10 fill-white"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.4-18.4 28.5-37.6 23.2l-98.3-51.4-19.1 18.2c-5.8 5.8-13.7 8.7-21.6 8.7-5.8 0-11.8-1.7-17.1-5.2l-30.6-19.8-98.3 51.4c-19.2 5.3-32.5-.8-37.6-23.2L1.3 98.6c-4.9-22.9 5.8-32.3 24.3-25.7l400.7 127.3c18.5 6.6 18.5 17.6-.1 24.2zM211 254.3l-13.6 16.4L52.8 333.3 400.3 116.5 211 254.3z"/></svg>
+            </a>
+            <a href="https://pump.fun/" target="_blank" class="w-16 h-16 p-2 rounded-full bg-white/10 hover:bg-[#FF00A6] transition duration-200 neon-glow flex items-center justify-center" aria-label="Pump.fun">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/bd/Pump_fun_logo.png" alt="Pump.fun Logo" class="w-10 h-10 social-icon">
+            </a>
+            <a id="dex-link" href="#" target="_blank" class="w-16 h-16 p-2 rounded-full bg-white/10 hover:bg-[#00FFFF] transition duration-200 neon-glow flex items-center justify-center" aria-label="DexScreener Chart">
+                <img src="https://images.apifyusercontent.com/JAu0GoIJvy2QxryzlGcdF2aZFhJZlKZBI-xA585gl8A/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSElNQUNaaE9uN1lKNzFkVHUtYWN0b3ItMmZTU2ZtWnJhbVBCTzczT0staUJpaG5GM3BicC1kZXhwbmcucG5n.webp" alt="DexScreener Logo" class="w-10 h-10 social-icon">
+            </a>
+            <a id="dextools-link" href="#" target="_blank" class="w-16 h-16 p-2 rounded-full bg-white/10 hover:bg-[#FF00A6] transition duration-200 neon-glow flex items-center justify-center" aria-label="Dextools Chart">
+                <img src="https://wp.logos-download.com/wp-content/uploads/2023/02/Dextools_Logo.svg?dl" alt="Dextools Logo" class="w-10 h-10 social-icon">
+            </a>
+        </div>
+    </section>
+
+    <hr class="border-t border-[#8A2BE2]/50 my-10">
+
+    <div class="overflow-hidden py-4 border-y border-[#FF00A6]/50">
+        <div class="flex animate-marquee whitespace-nowrap">
+            <span class="text-4xl font-header text-[#00FFFF] mx-10 tracking-widest">WAGMI WAGMI WAGMI * RETROWAVE PUMP * JEET IS WEAK * DIAMOND HANDS ONLY * $MEMECOIN *</span>
+            <span class="text-4xl font-header text-[#00FFFF] mx-10 tracking-widest">WAGMI WAGMI WAGMI * RETROWAVE PUMP * JEET IS WEAK * DIAMOND HANDS ONLY * $MEMECOIN *</span>
+        </div>
+    </div>
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 25s linear infinite;
+        }
+    </style>
+
+    <section id="buy" class="container mx-auto py-20">
+        <h2 class="text-5xl font-header text-[#FF00A6] text-center mb-12">## HOW TO CATCH THE WAVE</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+            <div class="p-6 bg-[#1a004b]/70 border border-[#00FFFF]/50 rounded-lg neon-glow text-center">
+                <div class="text-5xl font-header text-[#00FFFF] mb-3">1</div>
+                <h3 class="text-2xl font-bold mb-3">GET $SOL</h3>
+                <p>Acquire Solana ($SOL) from a major exchange (Coinbase, Binance, etc.) and transfer it to your Phantom or Solflare wallet.</p>
+            </div>
+            <div class="p-6 bg-[#1a004b]/70 border border-[#FF00A6]/50 rounded-lg neon-glow text-center">
+                <div class="text-5xl font-header text-[#FF00A6] mb-3">2</div>
+                <h3 class="text-2xl font-bold mb-3">GO TO PUMP.FUN</h3>
+                <p>Click the **BUY** button below or navigate to the official $MEMECOIN page on Pump.fun.</p>
+            </div>
+            <div class="p-6 bg-[#1a004b]/70 border border-[#00FFFF]/50 rounded-lg neon-glow text-center">
+                <div class="text-5xl font-header text-[#00FFFF] mb-3">3</div>
+                <h3 class="text-2xl font-bold mb-3">CONNECT WALLET</h3>
+                <p>Connect your wallet (Phantom/Solflare) to the Pump.fun platform.</p>
+            </div>
+            <div class="p-6 bg-[#1a004b]/70 border border-[#FF00A6]/50 rounded-lg neon-glow text-center">
+                <div class="text-5xl font-header text-[#FF00A6] mb-3">4</div>
+                <h3 class="text-2xl font-bold mb-3">SWAP & HOLD</h3>
+                <p>Swap your $SOL for $MEMECOIN. Hold strong until the liquidity is locked and the coin is auto-migrated to Raydium.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="container mx-auto py-20">
+        <h2 class="text-5xl font-header text-[#00FFFF] text-center mb-12">## THE ROADMAP: SYNTH-FUTURE</h2>
+        <div class="relative max-w-4xl mx-auto">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#8A2BE2] h-full"></div>
+            
+            <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-10 flex items-center order-1 bg-[#FF00A6] shadow-xl w-6 h-6 rounded-full"></div>
+                <div class="order-1 w-5/12 px-6 py-4 bg-[#1a004b]/80 border border-[#FF00A6] rounded-lg neon-glow">
+                    <h3 class="mb-3 font-header text-2xl text-[#FF00A6]">PHASE I: INITIALIZING THE GRID</h3>
+                    <p class="text-sm">Stealth Launch on **Pump.fun**. Community building and meme propagation. Reaching the necessary liquidity for Raydium migration. First sticker pack deployment.</p>
+                </div>
+            </div>
+            
+            <div class="mb-8 flex justify-between items-center w-full left-timeline">
+                <div class="order-1 w-5/12 px-6 py-4 bg-[#1a004b]/80 border border-[#00FFFF] rounded-lg neon-glow">
+                    <h3 class="mb-3 font-header text-2xl text-[#00FFFF]">PHASE II: ARCADE TAKEOVER</h3>
+                    <p class="text-sm">Liquidity Locked & Migrated to Raydium. Chart listing on DexScreener/Dextools. Aggressive marketing push (Hype GIF release). Aiming for 1000+ $MEMECOIN holders.</p>
+                </div>
+                <div class="z-10 flex items-center order-1 bg-[#00FFFF] shadow-xl w-6 h-6 rounded-full"></div>
+                <div class="order-1 w-5/12"></div>
+            </div>
+
+            <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                <div class="order-1 w-5/12"></div>
+                <div class="z-10 flex items-center order-1 bg-[#FF00A6] shadow-xl w-6 h-6 rounded-full"></div>
+                <div class="order-1 w-5/12 px-6 py-4 bg-[#1a004b]/80 border border-[#FF00A6] rounded-lg neon-glow">
+                    <h3 class="mb-3 font-header text-2xl text-[#FF00A6]">PHASE III: ENDLESS MODE</h3>
+                    <p class="text-sm">Application for CoinGecko & CoinMarketCap. Exploring CEX listings (Tier 2). Building community utility/mini-game (Arcade style). Achieving global **CHAD** status.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stickers" class="container mx-auto py-20 text-center">
+        <h2 class="text-5xl font-header text-[#FF00A6] text-center mb-12">## THE ASSETS: NANO BANANA STICKER PACK</h2>
+        <p class="text-xl text-[#00FFFF] mb-10">Get your profile pics ready. These are production-ready. </p>
+    </section>
+
+    <footer class="mt-20 py-8 border-t border-[#00FFFF]/50 bg-retrowave/90">
+        <div class="container mx-auto text-center text-sm text-white/70">
+            <p>Risk Warning: This is a meme coin. Trade at your own risk. **DYOR.**</p>
+            <p class="mt-2 text-lg text-[#FF00A6] font-header tracking-widest">© 2025 $MEMECOIN. POWERED BY DEGENS.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

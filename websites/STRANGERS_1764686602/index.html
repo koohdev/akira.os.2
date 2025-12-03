@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$STRANGERS | The Upside Down of Solana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'void': '#050505',
+                        'blood': '#ff0000',
+                        'faded': '#8a0000',
+                        'retro-white': '#e0e0e0',
+                    },
+                    fontFamily: {
+                        'stranger': ['"Merriweather"', 'serif'],
+                        'tech': ['"Share Tech Mono"', 'monospace'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glitch': 'glitch 1s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+        
+        /* The Stranger Glow */
+        .title-glow {
+            text-shadow: 
+                0 0 5px #8a0000,
+                0 0 10px #8a0000,
+                0 0 20px #ff0000,
+                0 0 40px #ff0000;
+        }
+
+        /* Particle Dust */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuMSkiLz48L3N2Zz4=');
+            animation: moveBackground 100s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes moveBackground {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 1000px; }
+        }
+
+        .crt-line {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="font-tech relative">
+
+    <div class="particles"></div>
+    <div class="crt-line"></div>
+
+    <script>
+        const CONFIG = {
+            CA: "j3s2eabdxatejd9nghavsrv88pugsqwmrggywxoel587",
+            SOCIAL_X: "X_LINK_PLACEHOLDER",
+            TELEGRAM: "TG_LINK_PLACEHOLDER"
+        };
+
+        function copyCA() {
+            navigator.clipboard.writeText(CONFIG.CA);
+            const btn = document.getElementById('copyBtn');
+            btn.innerText = "COPIED!";
+            setTimeout(() => btn.innerText = "CA: " + CONFIG.CA.slice(0,4) + "..." + CONFIG.CA.slice(-4), 2000);
+        }
+    </script>
+
+    <nav class="fixed w-full z-40 top-0 bg-void/90 backdrop-blur-md border-b border-blood/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <span class="font-stranger text-2xl text-blood title-glow font-bold tracking-widest uppercase">$STRANGERS</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <button onclick="copyCA()" id="copyBtn" class="bg-blood/10 hover:bg-blood/30 text-blood px-3 py-1 rounded border border-blood/50 transition cursor-pointer">
+                            CA: CA_PL...LDER
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 pt-20">
+        
+        <div class="mb-8 animate-float filter drop-shadow-[0_0_15px_rgba(255,0,0,0.5)]">
+            <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/6/67/StrangerThingslogo.png/500px-StrangerThingslogo.png" 
+                 alt="Strangers Logo" 
+                 class="w-full max-w-2xl mx-auto object-contain">
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-stranger text-blood title-glow mb-4 uppercase tracking-widest">
+            Enter The Upside Down
+        </h1>
+        
+        <p class="mt-4 max-w-2xl text-xl text-gray-400 font-tech">
+            The fiat world is crumbling. Join the party in the void. <br>
+            Don't be a mouth-breather. Secure the bag.
+        </p>
+
+        <div class="mt-10 flex flex-wrap justify-center gap-6">
+            <a href="https://raydium.io/swap/?inputMint=sol&outputMint=j3s2eabdxatejd9nghavsrv88pugsqwmrggywxoel587" 
+               target="_blank"
+               class="relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-bold text-white transition-all duration-300 bg-blood rounded-lg hover:bg-red-700 group focus:outline-none ring-offset-2 focus:ring-2 ring-red-400">
+                <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                <span class="relative uppercase tracking-widest">BUY ON RAYDIUM</span>
+            </a>
+
+            <div class="flex space-x-4">
+                <a href="https://dexscreener.com/solana/j3s2eabdxatejd9nghavsrv88pugsqwmrggywxoel587" target="_blank" class="p-3 bg-gray-900 rounded-lg border border-gray-700 hover:border-blood transition group">
+                    <img src="https://images.apifyusercontent.com/JAu0GoIJvy2QxryzlGcdF2aZFhJZlKZBI-xA585gl8A/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSElNQUNaaE9uN1lKNzFkVHUtYWN0b3ItMmZTU2ZtWnJhbVBCTzczT0staUJpaG5GM3BicC1kZXhwbmcucG5n.webp" class="w-8 h-8 opacity-80 group-hover:opacity-100" alt="DexScreener">
+                </a>
+                <a href="https://www.dextools.io/app/en/solana/pair-explorer/j3s2eabdxatejd9nghavsrv88pugsqwmrggywxoel587" target="_blank" class="p-3 bg-gray-900 rounded-lg border border-gray-700 hover:border-blood transition group">
+                    <img src="https://wp.logos-download.com/wp-content/uploads/2023/02/Dextools_Logo.svg?dl" class="w-8 h-8 opacity-80 group-hover:opacity-100 invert" alt="Dextools">
+                </a>
+                <a href="TG_LINK_PLACEHOLDER" target="_blank" class="p-3 bg-gray-900 rounded-lg border border-gray-700 hover:border-blood transition group">
+                     <svg class="w-8 h-8 text-white group-hover:text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.623 4.823-4.46c.405-.374.053-.96-.457-.595L7.354 12.21l-2.624-.848c-.568-.226-.56-.55.127-.81l10.19-4.008c.535-.194.993.125.847.677z"/></svg>
+                </a>
+                <a href="X_LINK_PLACEHOLDER" target="_blank" class="p-3 bg-gray-900 rounded-lg border border-gray-700 hover:border-blood transition group">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" class="w-8 h-8 opacity-80 group-hover:opacity-100 invert" alt="X">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-blood w-full overflow-hidden py-2 transform -skew-y-2 border-y-4 border-black z-20 relative">
+        <div class="whitespace-nowrap animate-[marquee_10s_linear_infinite] font-stranger text-black font-bold text-xl">
+            FRIENDS DON'T LIE  ///  APE INTO THE VOID  ///  $STRANGERS TO THE MOON  ///  NO MOUTH BREATHERS ALLOWED  ///  FRIENDS DON'T LIE  ///  APE INTO THE VOID  ///
+        </div>
+    </div>
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+
+    <section class="py-20 relative z-10 max-w-4xl mx-auto px-6">
+        <div class="border border-blood/30 bg-black/80 p-8 rounded-xl backdrop-blur shadow-[0_0_20px_rgba(255,0,0,0.1)]">
+            <h2 class="text-3xl font-stranger text-blood mb-6 border-b border-blood/30 pb-2">CHAPTER 1: THE SIGNAL</h2>
+            <p class="text-lg leading-relaxed text-gray-300 font-tech">
+                Something is coming. It's not from this world. The charts are bleeding into the Upside Down. $STRANGERS is the only vehicle capable of navigating the dark matter of the memecoin supercycle.
+                <br><br>
+                We are a community of outcasts, nerds, and degens united against the mind flayer (The SEC).
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-b from-transparent to-blood/10 z-10 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-stranger text-center text-white title-glow mb-12">HOW TO JOIN THE PARTY</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 border border-gray-800 bg-black hover:border-blood transition duration-300 rounded-lg group">
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition">👻</div>
+                    <h3 class="text-xl font-bold text-blood mb-2 font-stranger">1. CREATE WALLET</h3>
+                    <p class="text-sm text-gray-400">Download Phantom or Solflare. Keep your seed phrase secret. Friends don't share seeds.</p>
+                </div>
+
+                <div class="p-6 border border-gray-800 bg-black hover:border-blood transition duration-300 rounded-lg group">
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition">⛽</div>
+                    <h3 class="text-xl font-bold text-blood mb-2 font-stranger">2. GET SOL</h3>
+                    <p class="text-sm text-gray-400">Load up your wallet with Solana ($SOL). You'll need it for gas and the swap.</p>
+                </div>
+
+                <div class="p-6 border border-gray-800 bg-black hover:border-blood transition duration-300 rounded-lg group">
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition">🩸</div>
+                    <h3 class="text-xl font-bold text-blood mb-2 font-stranger">3. SWAP FOR $STRANGERS</h3>
+                    <p class="text-sm text-gray-400">Go to Raydium, paste the CA, and swap. Welcome to the club.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 relative z-10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+             <h2 class="text-4xl font-stranger text-white title-glow mb-8">TOKENOMICS</h2>
+             <div class="flex flex-col md:flex-row justify-center gap-10">
+                 <div class="bg-blood/5 p-6 rounded-lg border border-blood/20 w-full">
+                     <h3 class="text-6xl font-bold text-blood">1B</h3>
+                     <p class="text-gray-400 mt-2 font-stranger">TOTAL SUPPLY</p>
+                 </div>
+                 <div class="bg-blood/5 p-6 rounded-lg border border-blood/20 w-full">
+                     <h3 class="text-6xl font-bold text-blood">0%</h3>
+                     <p class="text-gray-400 mt-2 font-stranger">TAXES</p>
+                 </div>
+                 <div class="bg-blood/5 p-6 rounded-lg border border-blood/20 w-full">
+                     <h3 class="text-6xl font-bold text-blood">LP</h3>
+                     <p class="text-gray-400 mt-2 font-stranger">BURNED</p>
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-gray-900 py-10 relative z-20">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <p class="text-blood font-stranger text-2xl mb-4 title-glow">$STRANGERS</p>
+            <p class="text-gray-600 text-sm text-center max-w-md font-tech">
+                Cryptocurrency is a high-risk venture. Do not risk funds you cannot afford to lose. We are not financial advisors, just kids riding bikes in the dark.
+            </p>
+            <p class="text-gray-700 text-xs mt-8">© 2025 $STRANGERS. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

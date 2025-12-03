@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$GHOST - The Future is Decentralized. And it's Electric.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --neon-purple: #D90368; /* Hot Pink/Magenta */
+            --neon-cyan: #04F0FF;   /* Electric Cyan */
+            --bg-primary: #0A0A0E;  /* Near-Black Charcoal */
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: #E0E0E0;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+        .neon-shadow-purple {
+            text-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 20px rgba(217, 3, 104, 0.6);
+        }
+        .neon-shadow-cyan {
+            text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 20px rgba(4, 240, 255, 0.6);
+        }
+        .bg-neon-purple { background-color: var(--neon-purple); }
+        .border-neon-cyan { border-color: var(--neon-cyan); }
+        .btn-neon {
+            background-color: var(--neon-purple);
+            box-shadow: 0 0 10px var(--neon-purple), 0 0 20px rgba(217, 3, 104, 0.5);
+            transition: all 0.2s;
+        }
+        .btn-neon:hover {
+            background-color: var(--neon-cyan);
+            box-shadow: 0 0 15px var(--neon-cyan), 0 0 30px rgba(4, 240, 255, 0.7);
+        }
+        .glitch-text {
+            position: relative;
+        }
+        .glitch-text::before, .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            clip: rect(0, 900px, 0, 0);
+        }
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--neon-cyan);
+            /* Simple glitch animation */
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--neon-purple);
+            /* Simple glitch animation */
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim-1 {
+            0% { clip: rect(40px, 900px, 45px, 0); }
+            50% { clip: rect(10px, 900px, 15px, 0); }
+            100% { clip: rect(70px, 900px, 75px, 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(60px, 900px, 65px, 0); }
+            50% { clip: rect(20px, 900px, 25px, 0); }
+            100% { clip: rect(80px, 900px, 85px, 0); }
+        }
+        .roadmap-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--neon-purple);
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--neon-cyan);
+            box-shadow: 0 0 8px var(--neon-cyan);
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // CRITICAL: CONFIG BLOCK
+        const CONFIG = {
+            TICKER: "$GHOST",
+            PLATFORM: "SOLANA",
+            CA: "CA_PLACEHOLDER", // Contract Address
+            SOCIAL_X: "X_LINK_PLACEHOLDER",
+            TELEGRAM: "TG_LINK_PLACEHOLDER"
+        };
+
+        // DYNAMIC LINK LOGIC
+        const BUY_LINK = `https://raydium.io/swap/?inputMint=sol&outputMint=${CONFIG.CA}`;
+        const CHART_LINK_DEXSCREENER = `https://dexscreener.com/solana/${CONFIG.CA}`;
+        const CHART_LINK_DEXTOOLS = `https://www.dextools.io/app/en/solana/pair-explorer/${CONFIG.CA}`;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('buy-button').href = BUY_LINK;
+            document.getElementById('chart-dexscreener').href = CHART_LINK_DEXSCREENER;
+            document.getElementById('chart-dextools').href = CHART_LINK_DEXTOOLS;
+            document.getElementById('social-x').href = CONFIG.SOCIAL_X;
+            document.getElementById('social-tg').href = CONFIG.TELEGRAM;
+            document.querySelectorAll('.ca-display').forEach(el => el.textContent = CONFIG.CA);
+        });
+    </script>
+
+    <nav class="sticky top-0 z-50 p-4 backdrop-blur-sm bg-black/60 border-b border-neon-cyan/30">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold neon-shadow-purple" data-text="$GHOST">$GHOST</a>
+            <div class="space-x-4">
+                <a href="#buy" class="text-sm uppercase hover:text-neon-cyan transition-colors">Protocol//Buy</a>
+                <a href="#roadmap" class="text-sm uppercase hover:text-neon-cyan transition-colors">Log//Roadmap</a>
+                <a href="#assets" class="text-sm uppercase hover:text-neon-cyan transition-colors">Assets//Vault</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative overflow-hidden pt-16 pb-24 md:pt-32 md:pb-40 text-center border-b border-neon-purple/50">
+        <div class="absolute inset-0 z-0 opacity-10 bg-cover bg-center" style="background-image: url('HYPE_GIF_PLACEHOLDER.gif');"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <p class="text-sm uppercase tracking-widest text-neon-cyan neon-shadow-cyan mb-4">A SOLANA DEGEN ASSET</p>
+            <h1 class="text-7xl md:text-[8rem] font-extrabold leading-none uppercase neon-shadow-purple mb-6 glitch-text" data-text="$GHOST">$GHOST</h1>
+            <p class="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto mb-8 neon-shadow-cyan">
+                The Future is Decentralized. And it's Electric. **WAGMI**.
+            </p>
+
+            <a id="buy-button" href="#" class="inline-block px-10 py-4 text-lg font-bold uppercase rounded-full btn-neon transition-all transform hover:scale-105">
+                // ACQUIRE $GHOST NOW //
+            </a>
+
+            <div class="mt-8 text-sm text-gray-400">
+                Contract Address (SOL): <span class="ca-display text-neon-cyan break-all">CA_PLACEHOLDER</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-8 bg-black/30 border-b border-t border-neon-cyan/20">
+        <div class="max-w-6xl mx-auto px-4 flex justify-center space-x-8">
+            <a id="social-x" href="#" target="_blank" class="flex items-center space-x-2 p-3 border border-neon-purple/50 rounded-lg hover:bg-neon-purple/20 transition-all">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" class="w-6 h-6 brightness-0 invert" alt="X/Twitter">
+                <span class="uppercase text-sm neon-shadow-purple">X_FEED</span>
+            </a>
+            <a id="social-tg" href="#" target="_blank" class="flex items-center space-x-2 p-3 border border-neon-purple/50 rounded-lg hover:bg-neon-purple/20 transition-all">
+                <span class="text-2xl">📡</span>
+                <span class="uppercase text-sm neon-shadow-purple">TELEGRAM</span>
+            </a>
+            <a id="chart-dexscreener" href="#" target="_blank" class="flex items-center space-x-2 p-3 border border-neon-cyan/50 rounded-lg hover:bg-neon-cyan/20 transition-all">
+                <img src="https://images.apifyusercontent.com/JAu0GoIJvy2QxryzlGcdF2aZFhJZlKZBI-xA585gl8A/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSElNQUNaaE9uN1lKNzFkVHUtYWN0b3ItMmZTU2ZtWnJhbVBCTzczT0staUJpaG5GM3BicC1kZXhwbmcucG5n.webp" class="w-6 h-6 brightness-0 invert" alt="DexScreener">
+                <span class="uppercase text-sm neon-shadow-cyan">LIVE_CHART</span>
+            </a>
+            <a id="chart-dextools" href="#" target="_blank" class="flex items-center space-x-2 p-3 border border-neon-cyan/50 rounded-lg hover:bg-neon-cyan/20 transition-all">
+                <img src="https://wp.logos-download.com/wp-content/uploads/2023/02/Dextools_Logo.svg?dl" class="w-6 h-6 brightness-0 invert" alt="Dextools">
+                <span class="uppercase text-sm neon-shadow-cyan">TOOLS_DEGEN</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="buy" class="py-20 max-w-4xl mx-auto px-4">
+        <h2 class="text-4xl font-bold uppercase text-center mb-12 neon-shadow-purple">PROTOCOL//ACCESS INITIATED</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-6 border border-neon-purple/50 rounded-lg bg-black/40 shadow-xl shadow-neon-purple/10">
+                <span class="text-5xl block mb-4 text-neon-cyan neon-shadow-cyan">1.</span>
+                <h3 class="text-xl font-bold mb-2 uppercase">INITIATE WALLET</h3>
+                <p class="text-gray-400 text-sm">Create a Sol-compatible wallet (Phantom, Solflare, etc.). Secure your private key. Do not be a JEET.</p>
+            </div>
+            <div class="p-6 border border-neon-purple/50 rounded-lg bg-black/40 shadow-xl shadow-neon-purple/10">
+                <span class="text-5xl block mb-4 text-neon-cyan neon-shadow-cyan">2.</span>
+                <h3 class="text-xl font-bold mb-2 uppercase">ACQUIRE SOL</h3>
+                <p class="text-gray-400 text-sm">Fund your wallet with SOL. Send from CEX (Coinbase, Binance, etc.) or purchase directly in-app.</p>
+            </div>
+            <div class="p-6 border border-neon-purple/50 rounded-lg bg-black/40 shadow-xl shadow-neon-purple/10">
+                <span class="text-5xl block mb-4 text-neon-cyan neon-shadow-cyan">3.</span>
+                <h3 class="text-xl font-bold mb-2 uppercase">SYNAPSE SWAP</h3>
+                <p class="text-gray-400 text-sm">Use the **Raydium** link. Paste CA: <span class="ca-display text-neon-purple">CA_PLACEHOLDER</span>. Set slippage to 'DEGEN'.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="py-20 bg-black/60 border-t border-b border-neon-purple/50">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-bold uppercase text-center mb-12 neon-shadow-cyan">LOG//DECENTRALIZED ROADMAP</h2>
+            <div class="space-y-8">
+                <div class="roadmap-item">
+                    <h3 class="text-2xl font-bold text-neon-cyan mb-1">PHASE 1: GHOST PROTOCOL ONLINE</h3>
+                    <p class="text-gray-300">// Contract Deployment. Stealth Launch. TGE. 1,000 Holders Initiated. Dextools Trending Activation. **The CHADS enter.**</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3 class="text-2xl font-bold text-neon-cyan mb-1">PHASE 2: MEMETIC OVERRIDE</h3>
+                    <p class="text-gray-300">// Nano Banana Sticker Bomb (500 Assets). Tier 2 Crypto Caller Campaign. Website V2 (Animated Mesh). Liquidity Pool Lock Finalized. **Anti-JEET Protocol.**</p>
+                </div>
+                <div class="roadmap-item">
+                    <h3 class="text-2xl font-bold text-neon-cyan mb-1">PHASE 3: CYBERPUNK SYNDICATE</h3>
+                    <p class="text-gray-300">// Partnership with High-Volume Degen KOLs. CEX Listing Inquiries (Tier 3). $GHOST NFT Collection Launch (Staking Utility). **The Future is here.**</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="assets" class="py-20 max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold uppercase mb-12 neon-shadow-purple">ASSETS//VAULT UNLOCKED</h2>
+        <p class="text-gray-400 mb-8">Download the production assets. Spread the vibe. **The Memes are the Marketing.**</p>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="p-6 border border-neon-cyan/50 rounded-lg bg-black/40">
+                <h3 class="text-2xl font-bold text-neon-cyan mb-4">GHOST PFP STICKER (ONIMASK)</h3>
+                <div class="w-full h-64 bg-gray-900 rounded-lg flex items-center justify-center border-2 border-dashed border-neon-cyan/50 mb-4">
+                    <span class="text-lg text-gray-500">Image of Digital Oni Mask Sticker Placeholder</span>
+                </div>
+                <button class="px-6 py-2 uppercase bg-neon-purple rounded hover:bg-neon-cyan transition-colors">Download PNG</button>
+            </div>
+            <div class="p-6 border border-neon-cyan/50 rounded-lg bg-black/40">
+                <h3 class="text-2xl font-bold text-neon-cyan mb-4">THE JEEP STICKER (VAPORWAVE)</h3>
+                <div class="w-full h-64 bg-gray-900 rounded-lg flex items-center justify-center border-2 border-dashed border-neon-cyan/50 mb-4">
+                    <span class="text-lg text-gray-500">Image of Vaporwave Cyber-Jeep Sticker Placeholder</span>
+                </div>
+                <button class="px-6 py-2 uppercase bg-neon-purple rounded hover:bg-neon-cyan transition-colors">Download PNG</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-6 border-t border-neon-purple/50 mt-12 text-center text-sm text-gray-500 bg-black/50">
+        <p>CAUTION: $GHOST is a volatile memetic asset. Do your own research. NFA. <span class="text-neon-cyan">Risk 0xF3C.</span></p>
+        <p class="mt-2 text-gray-400">© 2025 // THE GHOST PROTOCOL // DECENTRALIZED ASSET</p>
+    </footer>
+
+</body>
+</html>

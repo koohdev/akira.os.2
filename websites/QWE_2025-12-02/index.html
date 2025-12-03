@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$QWE: The Viral Financial Vehicle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Degen Fonts for Glitch/Cyberpunk Vibe */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+        
+        .font-cyber-head {
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14; /* Neon Green Glow */
+        }
+        .font-cyber-body {
+            font-family: 'Share Tech Mono', monospace;
+        }
+        .neon-glow-text {
+            color: #39ff14;
+            text-shadow: 0 0 5px #39ff14, 0 0 10px rgba(57, 255, 20, 0.5);
+        }
+        .neon-glow-bg {
+            box-shadow: 0 0 10px #39ff14;
+        }
+        /* Custom Glitch Effect on the logo text for max Degen factor */
+        .glitch {
+            position: relative;
+        }
+        .glitch:before,
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .glitch:before {
+            left: 2px;
+            text-shadow: -1px 0 #ff00ff;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+        .glitch:after {
+            left: -2px;
+            text-shadow: 1px 0 #00ffff;
+            clip: rect(80px, 450px, 92px, 0);
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+        @keyframes glitch-anim-1 { 
+            0% { clip: rect(32px, 9999px, 52px, 0); transform: skew(0.5deg); }
+            50% { clip: rect(72px, 9999px, 92px, 0); transform: skew(0.2deg); }
+            100% { clip: rect(12px, 9999px, 32px, 0); transform: skew(0.8deg); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip: rect(10px, 9999px, 30px, 0); transform: skew(-0.5deg); }
+            50% { clip: rect(60px, 9999px, 80px, 0); transform: skew(-0.2deg); }
+            100% { clip: rect(40px, 9999px, 60px, 0); transform: skew(-0.8deg); }
+        }
+    </style>
+    <script>
+        const CONFIG = { 
+            CA: "CA_PLACEHOLDER", 
+            SOCIAL_X: "X_LINK_PLACEHOLDER", 
+            TELEGRAM: "TG_LINK_PLACEHOLDER",
+            PLATFORM: "SOLANA" /* For dynamic chart links */
+        };
+        
+        // Dynamic Link Generation
+        document.addEventListener('DOMContentLoaded', () => {
+            // Main Buy Button Link
+            const buyButton = document.getElementById('buyButton');
+            let buyLink = "";
+            switch ("SOLANA") { // Hardcoded Platform check
+                case "Pump.fun":
+                    buyLink = `https://pump.fun/coin/${CONFIG.CA}`;
+                    break;
+                case "Raydium":
+                    buyLink = `https://raydium.io/swap/?inputMint=sol&outputMint=${CONFIG.CA}`;
+                    break;
+                case "Uniswap":
+                    buyLink = `https://app.uniswap.org/swap?outputCurrency=${CONFIG.CA}`;
+                    break;
+                default: // Default to Raydium/SOL for safety
+                    buyLink = `https://raydium.io/swap/?inputMint=sol&outputMint=${CONFIG.CA}`;
+            }
+            if (buyButton) buyButton.href = buyLink;
+
+            // Chart Links - Sol is the only supported chain from prompt
+            const dexscreenerLink = document.getElementById('dexscreenerLink');
+            const dextoolsLink = document.getElementById('dextoolsLink');
+            
+            if (dexscreenerLink) dexscreenerLink.href = `https://dexscreener.com/solana/${CONFIG.CA}`;
+            if (dextoolsLink) dextoolsLink.href = `https://www.dextools.io/app/en/solana/pair-explorer/${CONFIG.CA}`;
+        });
+
+    </script>
+</head>
+<body class="bg-black text-gray-100 font-cyber-body min-h-screen">
+
+    <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-sm border-b border-green-500/20 shadow-lg shadow-green-500/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-black font-cyber-head neon-glow-text" data-text="$QWE">$QWE</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#hero" class="hover:neon-glow-text px-3 py-2 rounded-md text-sm font-medium transition duration-150">HACK_ACCESS</a>
+                        <a href="#how-to-buy" class="hover:neon-glow-text px-3 py-2 rounded-md text-sm font-medium transition duration-150">INJECT_SOL</a>
+                        <a href="#roadmap" class="hover:neon-glow-text px-3 py-2 rounded-md text-sm font-medium transition duration-150">PROTOCOL_VARS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="relative overflow-hidden pt-16 pb-24 md:pt-32 md:pb-40 bg-black">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+             
+            <div class="h-full w-full bg-[repeating-linear-gradient(0deg,#101010,#101010_1px,transparent_1px,transparent_10px)]"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <h1 class="text-7xl md:text-9xl font-extrabold font-cyber-head text-white tracking-tighter mb-4 glitch" data-text="$QWE">
+                $QWE
+            </h1>
+            <p class="text-2xl md:text-4xl neon-glow-text mb-8">
+                **PROTOCOL: VIRAL_FINANCIAL_VEHICLE_V1.0**
+            </p>
+            <p class="max-w-3xl mx-auto text-lg text-gray-400 mb-10">
+                You're not buying a coin; you're injecting a **Trojan Horse** into the old system. This is the **CYBERPUNK** contract—high risk, max returns. **WAGMI** or **JEET**. Choose your fate.
+            </p>
+            <a id="buyButton" href="#" target="_blank" class="inline-flex items-center justify-center px-12 py-4 border-2 border-green-500 text-base font-bold rounded-lg text-black bg-green-500 transition duration-300 transform hover:scale-105 neon-glow-bg shadow-lg shadow-green-500/50">
+                <span class="text-xl font-cyber-body">INJECT SOL &gt;&gt;</span>
+            </a>
+            <div class="mt-8 text-gray-500 text-sm">
+                <span class="neon-glow-text">CA: </span> <span id="caDisplay" class="break-all">CA_PLACEHOLDER</span>
+                <button onclick="navigator.clipboard.writeText(CONFIG.CA)" class="ml-2 text-green-500 hover:text-green-300 transition duration-150">[COPY]</button>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-green-500/50 my-10 max-w-7xl mx-auto">
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center" id="socials">
+        <h2 class="text-4xl font-cyber-head neon-glow-text mb-8">DEGEN_DATA_STREAM</h2>
+        <div class="flex flex-wrap justify-center items-center space-x-6 md:space-x-12">
+            
+            <a href="X_LINK_PLACEHOLDER" target="_blank" class="group transition duration-200 transform hover:scale-110">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="X/Twitter" class="w-8 h-8 md:w-10 md:h-10 invert group-hover:drop-shadow-[0_0_8px_#39ff14]">
+            </a>
+            
+            <a href="TG_LINK_PLACEHOLDER" target="_blank" class="group transition duration-200 transform hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 md:w-10 md:h-10 fill-white group-hover:fill-green-500 group-hover:drop-shadow-[0_0_8px_#39ff14]" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.35 7.15l-6.31 4.75c-.17.13-.37.2-.57.2-.21 0-.41-.07-.58-.2L5.8 11.23c-.22-.17-.28-.5-.14-.76.15-.26.47-.35.75-.2l3.4 2.56 5.67-4.27c.22-.17.55-.1.7.16.15.26.06.59-.16.76z"/></svg>
+            </a>
+
+            <a id="dexscreenerLink" href="#" target="_blank" class="group transition duration-200 transform hover:scale-110">
+                <img src="https://images.apifyusercontent.com/JAu0GoIJvy2QxryzlGcdF2aZFhJZlKZBI-xA585gl8A/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSElNQUNaaE9uN1lKNzFkVHUtYWN0b3ItMmZTU2ZtWnJhbVBCTzczT0staUJpaG5GM3BicC1kZXhwbmcucG5n.webp" alt="DexScreener" class="w-8 h-8 md:w-10 md:h-10 brightness-0 invert group-hover:drop-shadow-[0_0_8px_#39ff14]">
+            </a>
+
+            <a id="dextoolsLink" href="#" target="_blank" class="group transition duration-200 transform hover:scale-110">
+                <img src="https://wp.logos-download.com/wp-content/uploads/2023/02/Dextools_Logo.svg?dl" alt="Dextools" class="w-8 h-8 md:w-10 md:h-10 invert group-hover:drop-shadow-[0_0_8px_#39ff14]">
+            </a>
+        </div>
+    </section>
+    
+    <hr class="border-green-500/50 my-10 max-w-7xl mx-auto">
+
+    <div class="bg-green-500/10 py-3 overflow-hidden border-y border-green-500/30">
+        <div class="flex whitespace-nowrap animate-marquee">
+            <span class="text-xl font-bold font-cyber-head neon-glow-text px-8">$QWE PROTOCOL ACTIVATED &middot; &lt;WAGMI_FUNDS_INJECTED&gt; &middot; 404 LIQUIDITY NOT FOUND (BURNED) &middot; $QWE PROTOCOL ACTIVATED &middot; &lt;WAGMI_FUNDS_INJECTED&gt; &middot; 404 LIQUIDITY NOT FOUND (BURNED) &middot;</span>
+            <span class="text-xl font-bold font-cyber-head neon-glow-text px-8">$QWE PROTOCOL ACTIVATED &middot; &lt;WAGMI_FUNDS_INJECTED&gt; &middot; 404 LIQUIDITY NOT FOUND (BURNED) &middot; $QWE PROTOCOL ACTIVATED &middot; &lt;WAGMI_FUNDS_INJECTED&gt; &middot; 404 LIQUIDITY NOT FOUND (BURNED) &middot;</span>
+        </div>
+    </div>
+    <style>
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+
+    <section id="how-to-buy" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h2 class="text-5xl font-cyber-head neon-glow-text text-center mb-12">INJECT_SOL: 3-STEP_PROCESS</h2>
+        <div class="space-y-12">
+            
+            <div class="p-6 bg-gray-900/50 rounded-lg border-2 border-green-500/50 neon-glow-bg hover:shadow-green-500/30 transition duration-300">
+                <h3 class="text-3xl font-cyber-head neon-glow-text mb-3">01 // OBTAIN SOL (BASE_UNIT)</h3>
+                <p class="text-gray-300">Acquire **SOL** from a centralized exchange (CEX) like Coinbase or Binance. This is your primary fuel source for the **SOLANA** chain.</p>
+            </div>
+
+            <div class="p-6 bg-gray-900/50 rounded-lg border-2 border-green-500/50 neon-glow-bg hover:shadow-green-500/30 transition duration-300">
+                <h3 class="text-3xl font-cyber-head neon-glow-text mb-3">02 // SECURE WALLET (OPSEC)</h3>
+                <p class="text-gray-300">Transfer your **SOL** to a decentralized wallet like **Phantom** or **Solflare**. Your keys, your chaos. *Never* share your seed phrase.</p>
+            </div>
+
+            <div class="p-6 bg-gray-900/50 rounded-lg border-2 border-green-500/50 neon-glow-bg hover:shadow-green-500/30 transition duration-300">
+                <h3 class="text-3xl font-cyber-head neon-glow-text mb-3">03 // EXECUTE SWAP (RAYDIUM)</h3>
+                <p class="text-gray-300">Click the **INJECT SOL** button above. Swap your **SOL** for **$QWE** on **Raydium**. Set slippage high (10%+) to beat the **JEETS** and execute on the volatility.</p>
+                <div class="mt-4 flex items-center space-x-4">
+                    <img src="https://png.pngtree.com/png-clipart/20230820/original/pngtree-uniswap-uni-token-symbol-cryptocurrency-logo-picture-image_8077633.png" alt="Uniswap/Raydium" class="w-8 h-8 brightness-0 invert">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/b/bd/Pump_fun_logo.png" alt="Pump.fun" class="w-8 h-8 brightness-0 invert">
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <hr class="border-green-500/50 my-10 max-w-7xl mx-auto">
+
+    <section id="roadmap" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h2 class="text-5xl font-cyber-head neon-glow-text text-center mb-12">PROTOCOL_VARS (ROADMAP)</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <div class="relative p-6 bg-gray-900/70 border-l-4 border-pink-500 shadow-xl shadow-pink-500/20">
+                <span class="absolute -top-4 left-4 text-pink-500 text-5xl font-black font-cyber-head">01</span>
+                <h3 class="text-2xl font-cyber-head mt-4 mb-3 text-pink-300">LAUNCH.EXE</h3>
+                <ul class="list-disc ml-5 text-gray-300 space-y-2">
+                    <li>Stealth Deploy on **SOLANA**</li>
+                    <li>Liquidity Burned/Locked (Forever)</li>
+                    <li>Contract Renounced (Protocol Secured)</li>
+                </ul>
+            </div>
+
+            <div class="relative p-6 bg-gray-900/70 border-l-4 border-green-500 shadow-xl shadow-green-500/20">
+                <span class="absolute -top-4 left-4 text-green-500 text-5xl font-black font-cyber-head">02</span>
+                <h3 class="text-2xl font-cyber-head mt-4 mb-3 neon-glow-text">VIRAL_INFILTRATION</h3>
+                <ul class="list-disc ml-5 text-gray-300 space-y-2">
+                    <li>Tier-1 Degen Collabs (Alpha Leaks)</li>
+                    <li>Asset Factory (Sticker Pack, Hype GIFs)</li>
+                    <li>24/7 Shilling Protocol (Forced Meme)</li>
+                </ul>
+            </div>
+
+            <div class="relative p-6 bg-gray-900/70 border-l-4 border-indigo-500 shadow-xl shadow-indigo-500/20">
+                <span class="absolute -top-4 left-4 text-indigo-500 text-5xl font-black font-cyber-head">03</span>
+                <h3 class="text-2xl font-cyber-head mt-4 mb-3 text-indigo-300">THE_MATRIX_BREAK</h3>
+                <ul class="list-disc ml-5 text-gray-300 space-y-2">
+                    <li>CEX Listing (Tier 2/3)</li>
+                    <li>**NFT** Collection (Digital Keys)</li>
+                    <li>**PROTOCOL: GLOBAL_DOMINATION** (Price go up)</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="stickers" class="bg-gray-900/50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl font-cyber-head neon-glow-text mb-12">ASSET_FACTORY: STICKER_PROTOCOL</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-10">Deploy the **$QWE** digital plague. Use the Nano Banana asset pack to ensure maximum **VIRAL** spread in every Telegram group.</p>
+             
+            <a href="TG_LINK_PLACEHOLDER" target="_blank" class="inline-flex items-center justify-center mt-6 px-8 py-3 border border-green-500 text-base font-medium rounded-md text-green-500 hover:bg-green-500 hover:text-black transition duration-300">
+                GET STICKER PACK &gt;
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-green-500/20 mt-12">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-gray-500 text-sm font-cyber-body">
+                PROTOCOL STATUS: **ONLINE** | CONTRACT V: **1.0** | NETWORK: **SOLANA**
+            </div>
+            <div class="mt-2 text-gray-600 text-xs">
+                &copy; 2025 $QWE PROTOCOL. ALL RIGHTS RESERVED. (MAYBE)
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

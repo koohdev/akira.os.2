@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$PEPE - The King of Memes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CONFIG */
+        :root {
+            --pepe-green: #4CA954;
+            --dark-bg: #0F172A;
+        }
+        body {
+            font-family: 'Comic Neue', cursive;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .impact-font {
+            font-family: 'Changa One', sans-serif;
+        }
+        .brutalist-border {
+            border: 4px solid white;
+            box-shadow: 8px 8px 0px #4CA954;
+            transition: all 0.2s ease;
+        }
+        .brutalist-border:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #4CA954;
+        }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .glitch-text:hover {
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: #D92222;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+    </style>
+    <script>
+        const CONFIG = {
+            TICKER: "$PEPE",
+            CA: "8wXtPePeSoLAnAContRacTAddReSSToBeRePLaced", // Placeholder
+            PUMP_URL: "https://pump.fun/board",
+            SOCIALS: {
+                X: "https://x.com",
+                TG: "https://t.me"
+            }
+        };
+
+        function copyCA() {
+            navigator.clipboard.writeText(CONFIG.CA);
+            const btn = document.getElementById('copyBtn');
+            btn.innerText = "COPIED! LFG!";
+            setTimeout(() => btn.innerText = "COPY CA: " + CONFIG.CA.substring(0,6) + "...", 2000);
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-white">
+
+    <nav class="w-full p-4 flex justify-between items-center fixed top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b-4 border-green-500">
+        <div class="text-3xl text-green-500 impact-font tracking-wider hover:rotate-2 transition-transform cursor-pointer">$PEPE</div>
+        <a href="#how-to-buy" class="bg-green-500 text-black font-bold py-2 px-6 rounded-none brutalist-border hover:bg-white uppercase">
+            Buy Now
+        </a>
+    </nav>
+
+    <header class="min-h-screen flex flex-col justify-center items-center text-center pt-24 px-4 relative overflow-hidden">
+        <div class="absolute top-10 left-10 text-6xl opacity-20 animate-bounce">🐸</div>
+        <div class="absolute bottom-20 right-10 text-6xl opacity-20 animate-pulse">🚀</div>
+
+        <h1 class="text-7xl md:text-9xl text-green-500 mb-4 drop-shadow-[4px_4px_0_rgba(255,255,255,1)]">
+            FEELS GOOD<br><span class="text-white">MAN</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-bold text-gray-300">
+            THE MOST MEMEABLE MEMECOIN IN EXISTENCE. NO UTILITY. NO ROADMAP. JUST PURE <span class="text-green-400">VIBES</span>.
+        </p>
+
+        <div class="w-64 h-64 md:w-96 md:h-96 mb-8 relative group">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png" alt="Pepe Placeholder" class="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(76,169,84,0.6)] group-hover:scale-110 transition-transform duration-300 rounded-full border-4 border-green-500 bg-white">
+            <div class="absolute -bottom-4 -right-4 bg-red-600 text-white font-bold px-4 py-1 rotate-12 border-2 border-white">
+                CHAD ONLY
+            </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 w-full justify-center items-center">
+            <button id="copyBtn" onclick="copyCA()" class="bg-slate-800 text-green-400 font-mono py-4 px-8 rounded-none border-2 border-green-500 hover:bg-green-900 transition-colors w-full md:w-auto text-lg">
+                CA: 8wXtPe...RePLaced
+            </button>
+            <a href="#" class="bg-green-500 text-black font-extrabold py-4 px-8 rounded-none brutalist-border text-xl w-full md:w-auto">
+                APE IN ON PUMP.FUN 💊
+            </a>
+        </div>
+    </header>
+
+    <section class="py-12 bg-black border-y-4 border-green-500">
+        <div class="container mx-auto flex justify-center gap-8 flex-wrap">
+            <a href="#" class="hover:scale-125 transition-transform">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="X" class="h-12 w-12 brightness-0 invert">
+            </a>
+            <a href="#" class="hover:scale-125 transition-transform">
+                <img src="https://images.apifyusercontent.com/JAu0GoIJvy2QxryzlGcdF2aZFhJZlKZBI-xA585gl8A/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSElNQUNaaE9uN1lKNzFkVHUtYWN0b3ItMmZTU2ZtWnJhbVBCTzczT0staUJpaG5GM3BicC1kZXhwbmcucG5n.webp" alt="DexScreener" class="h-12 w-12 rounded-full border-2 border-white">
+            </a>
+            <a href="#" class="hover:scale-125 transition-transform">
+                <img src="https://wp.logos-download.com/wp-content/uploads/2023/02/Dextools_Logo.svg?dl" alt="Dextools" class="h-12 brightness-0 invert">
+            </a>
+            <a href="#" class="hover:scale-125 transition-transform">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/bd/Pump_fun_logo.png" alt="Pump.fun" class="h-12 w-12 rounded-lg border-2 border-green-500">
+            </a>
+        </div>
+    </section>
+
+    <div class="bg-green-500 text-black py-3 border-b-4 border-white marquee-container font-bold text-2xl uppercase">
+        <div class="marquee-content">
+            BUY $PEPE 🚀 DONT JEET 📉 FEELS GOOD MAN 🐸 SOLANA SUMMER IS HERE ☀️ WAGMI 💎 HANDS ONLY 🦍 BUY $PEPE 🚀 DONT JEET 📉 FEELS GOOD MAN 🐸 SOLANA SUMMER IS HERE ☀️ WAGMI 💎 HANDS ONLY 🦍
+        </div>
+    </div>
+
+    <section id="how-to-buy" class="py-20 px-4 bg-slate-900">
+        <h2 class="text-5xl text-center text-white mb-16 impact-font">HOW TO BECOME A <span class="text-green-500">GIGACHAD</span></h2>
+        
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-slate-800 p-8 border-4 border-green-500 hover:-translate-y-2 transition-transform">
+                <div class="text-6xl mb-4">👻</div>
+                <h3 class="text-2xl font-bold mb-2">1. CREATE WALLET</h3>
+                <p class="text-gray-400">Download Phantom or Solflare. Don't use a CEX unless you want to stay poor.</p>
+            </div>
+            <div class="bg-slate-800 p-8 border-4 border-green-500 hover:-translate-y-2 transition-transform">
+                <div class="text-6xl mb-4">💰</div>
+                <h3 class="text-2xl font-bold mb-2">2. GET SOL</h3>
+                <p class="text-gray-400">Buy SOL and send it to your wallet. If you don't have money, ask your grandma.</p>
+            </div>
+            <div class="bg-slate-800 p-8 border-4 border-green-500 hover:-translate-y-2 transition-transform">
+                <div class="text-6xl mb-4">💊</div>
+                <h3 class="text-2xl font-bold mb-2">3. BUY ON PUMP.FUN</h3>
+                <p class="text-gray-400">Paste the CA. Swap SOL for $PEPE. Watch the green candles
